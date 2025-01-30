@@ -92,7 +92,7 @@ const ClientSignup = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/client/register', {
+      const response = await axios.post('https://back-production-9b4c.up.railway.app/api/auth/client/register', {
         username: formData.username,
         email: formData.email,
         password: formData.password

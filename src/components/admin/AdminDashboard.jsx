@@ -66,7 +66,7 @@ const AdminDashboard = () => {
 
   const fetchPendingBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/books/pending', {
+      const response = await axios.get('https://back-production-9b4c.up.railway.app/api/books/pending', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPendingBooks(response.data);
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
   const handleBookReview = async (bookId, action) => {
     try {
       await axios.patch(
-        `http://localhost:5000/api/books/${bookId}/review`,
+        `https://back-production-9b4c.up.railway.app/api/books/${bookId}/review`,
         { action },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -111,7 +111,7 @@ const AdminDashboard = () => {
 
   const fetchStatistics = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/books/statistics', {
+      const response = await axios.get('https://back-production-9b4c.up.railway.app/api/books/statistics', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(response.data);
@@ -127,7 +127,7 @@ const AdminDashboard = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/books/available');
+      const response = await axios.get('https://back-production-9b4c.up.railway.app/api/books/available');
       setBooks(response.data);
     } catch (error) {
       toast({
@@ -143,7 +143,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     try {
       await axios.post(
-        'http://localhost:5000/api/books',
+        'https://back-production-9b4c.up.railway.app/api/books',
         {
           title,
           author,

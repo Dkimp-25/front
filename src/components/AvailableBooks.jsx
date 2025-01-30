@@ -36,7 +36,7 @@ const AvailableBooks = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/books/available');
+      const response = await axios.get('https://back-production-9b4c.up.railway.app/api/books/available');
       setBooks(response.data);
       const initialQuantities = {};
       response.data.forEach(book => {
@@ -61,7 +61,7 @@ const AvailableBooks = () => {
 
     try {
       await axios.patch(
-        `http://localhost:5000/api/books/${bookId}/buy`,
+        `https://back-production-9b4c.up.railway.app/api/books/${bookId}/buy`,
         { quantity: quantities[bookId] },
         {
           headers: { Authorization: `Bearer ${token}` },

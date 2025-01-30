@@ -56,7 +56,7 @@ const ClientDashboard = () => {
 
   const fetchMyBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/books/my-books', {
+      const response = await axios.get('https://back-production-9b4c.up.railway.app/api/books/my-books', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMyBooks(response.data);
@@ -72,7 +72,7 @@ const ClientDashboard = () => {
 
   const fetchPurchaseHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/books/purchases', {
+      const response = await axios.get('https://back-production-9b4c.up.railway.app/api/books/purchases', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPurchaseHistory(response.data);
@@ -88,7 +88,7 @@ const ClientDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/books/client-stats', {
+      const response = await axios.get('https://back-production-9b4c.up.railway.app/api/books/client-stats', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(response.data);
